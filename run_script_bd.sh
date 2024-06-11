@@ -1,6 +1,7 @@
 #! /bin/bash
 
 ARCHIVE_SQL='employee_bd.tar.gz'
+SCRIPT_SQL='employee_bd.sql'
 
 
 if [ ! $# -eq 1 ] 
@@ -16,7 +17,7 @@ tar xvfz ${ARCHIVE_SQL} && PGPASSWORD=password psql \
   -p 5432 \
   -d devavance_db \
   -U devavance_user \
-  -f employee_bd.sql&&rm employee_bd.sql.*"
+  -f employee_bd.sql&&rm ${SCRIPT_SQL}&&rm ${ARCHIVE_SQL}"
 
 exit 0
 
